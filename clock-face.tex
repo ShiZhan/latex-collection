@@ -1,0 +1,46 @@
+% A clock face
+% Author : Shi Zhan
+% based on http://www.texample.net/media/tikz/examples/TEX/cycle.tex
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{fix-cm}
+%%%<
+\usepackage{verbatim}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{5pt}%
+%%%>
+
+\begin{comment}
+:Title: A clock face
+:Tags: Foreach;Graphs
+:Author: Shi.Zhan
+\end{comment}
+
+\usetikzlibrary{lindenmayersystems}
+
+\begin{document}
+
+\pgfdeclarelindenmayersystem{Fractal plant}{
+  \rule{X -> F-[[X]+X]+F[+FX]-X}
+  \rule{F -> FF}}
+
+\begin{tikzpicture}
+
+\def \n {12}
+\def \radius {8.5cm}
+\def \margin {8} % margin in angles, depends on the radius
+
+\foreach \s in {1,...,\n}
+{
+  \node[font=\fontsize{60}{60}\selectfont] at ({360/\n * (2 - (\s - 1))}:\radius) {$\s$};
+  \draw[->, >=latex] ({360/\n * (2 - (\s - 1))-\margin}:\radius) 
+    arc ({360/\n * (2 - (\s - 1))-\margin}:{360/\n * (2 - \s)+\margin}:\radius);
+}
+
+\draw [green!50!black, rotate=90, shift={(-6 cm, 0 cm)}]
+[l-system={Fractal plant, axiom=X, order=6, step=2pt, angle=25}]
+lindenmayer system; 
+
+\end{tikzpicture}
+\end{document}

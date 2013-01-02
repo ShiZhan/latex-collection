@@ -1,0 +1,14 @@
+syntax: glob
+# reverted files
+*.orig
+# LaTeX intermediate files
+*.aux
+*.log
+*.nav
+*.out
+*.pdf
+*.snm
+*.toc
+*.bbl
+*.blg
+*.vrb
