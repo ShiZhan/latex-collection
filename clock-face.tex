@@ -1,9 +1,13 @@
 % A clock face
 % Author : Shi Zhan
-% based on http://www.texample.net/media/tikz/examples/TEX/cycle.tex
+% based on
+% http://www.texample.net/media/tikz/examples/TEX/cycle.tex
+% http://www.texample.net/media/tikz/examples/TEX/lindenmayer-systems.tex
 \documentclass{article}
 \usepackage{tikz}
 \usepackage{fix-cm}
+\usepackage{fontspec}
+\setmainfont{Monotype Corsiva}
 %%%<
 \usepackage{verbatim}
 \usepackage[active,tightpage]{preview}
@@ -33,7 +37,7 @@
 
 \foreach \s in {1,...,\n}
 {
-  \node[font=\fontsize{60}{60}\selectfont] at ({360/\n * (2 - (\s - 1))}:\radius) {$\s$};
+  \node[font=\fontsize{60}{60}\selectfont] at ({360/\n * (2 - (\s - 1))}:\radius) {\s};
   \draw[->, >=latex] ({360/\n * (2 - (\s - 1))-\margin}:\radius) 
     arc ({360/\n * (2 - (\s - 1))-\margin}:{360/\n * (2 - \s)+\margin}:\radius);
 }
