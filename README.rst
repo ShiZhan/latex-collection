@@ -15,7 +15,7 @@ clock-face.tex
 
 Draw a clock face with fractal decoration.
 
-The dial is using font `Baby Universe <http://www.fontspace.com/no-images/baby-universe>`_.
+The dial is using font `Baby Universe <http://www.fontspace.com/no-images/baby-universe>`_, license maybe different.
 
 Requirements
 ------------
