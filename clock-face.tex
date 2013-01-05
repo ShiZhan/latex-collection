@@ -31,17 +31,20 @@
 
 \begin{tikzpicture}
 
+% draw edge
+\draw[black!10] (0,0) circle (9.1cm);
+\draw[black!10] (0,0) circle (0.5cm);
+
+% draw dial
 \def \n {12}
-\def \radius {8.5cm}
-\def \margin {8} % margin in angles, depends on the radius
+\def \radius {8cm}
 
 \foreach \s in {1,...,\n}
 {
-  \node[font=\fontsize{60}{60}\selectfont] at ({360/\n * (2 - (\s - 1))}:\radius) {\s};
-  \draw[->, >=latex] ({360/\n * (2 - (\s - 1))-\margin}:\radius) 
-    arc ({360/\n * (2 - (\s - 1))-\margin}:{360/\n * (2 - \s)+\margin}:\radius);
+  \node[font=\fontsize{90}{90}\selectfont] at ({360/\n * (2 - (\s - 1))}:\radius) {\s};
 }
 
+% draw decoration
 \draw [green!50!black, rotate=90, shift={(-6 cm, 0 cm)}]
 [l-system={Fractal plant, axiom=X, order=6, step=2pt, angle=25}]
 lindenmayer system; 
