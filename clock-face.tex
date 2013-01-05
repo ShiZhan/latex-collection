@@ -7,7 +7,7 @@
 \usepackage{tikz}
 \usepackage{fix-cm}
 \usepackage{fontspec}
-\setmainfont{Monotype Corsiva}
+\setmainfont{Baby Universe}
 %%%<
 \usepackage{verbatim}
 \usepackage[active,tightpage]{preview}
@@ -37,11 +37,11 @@
 
 % draw dial
 \def \n {12}
-\def \radius {8cm}
+\def \radius {7.6cm}
 
 \foreach \s in {1,...,\n}
 {
-  \node[font=\fontsize{90}{90}\selectfont] at ({360/\n * (2 - (\s - 1))}:\radius) {\s};
+  \node[font=\fontsize{70}{70}\selectfont] at ({360/\n * (2 - (\s - 1))}:\radius) {\s};
 }
 
 % draw decoration
